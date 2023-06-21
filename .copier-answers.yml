@@ -1,0 +1,14 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: 5b146b5
+_src_path: https://github.com/open-synergy/ssi-addons-repo-template.git
+dependency_installation_mode: OCA
+generate_requirements_txt: true
+include_aeroo_report: false
+include_wkhtmltopdf: false
+odoo_version: 14.0
+rebel_module_groups: []
+repo_description: ssi-l10n-indonesia-partner
+repo_name: ssi-l10n-indonesia-partner
+repo_slug: ssi-l10n-indonesia-partner
+travis_apt_packages: []
+travis_apt_sources: []
