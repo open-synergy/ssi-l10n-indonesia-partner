@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_bank_bmri" model="res.bank">
+        <field name="name">Bank Mandiri</field>
+    </record>
+    <record id="res_bank_ibbk" model="res.bank">
+        <field name="name">Bank International Indonesia Maybank</field>
+    </record>
+    <record id="res_bank_bbba" model="res.bank">
+        <field name="name">Bank Permata</field>
+    </record>
+    <record id="res_bank_bbbb" model="res.bank">
+        <field name="name">Bank Permata Syariah</field>
+    </record>
+    <record id="res_bank_cena" model="res.bank">
+        <field name="name">Bank Central Asia (BCA)</field>
+    </record>
+    <record id="res_bank_bnin" model="res.bank">
+        <field name="name">Bank Negara Indonesia 46 (BNI)</field>
+    </record>
+    <record id="res_bank_hnbn" model="res.bank">
+        <field name="name">Bank KEB Hana Indonesia</field>
+    </record>
+    <record id="res_bank_brin" model="res.bank">
+        <field name="name">Bank Rakyat Indonesia (BRI)</field>
+    </record>
+    <record id="res_bank_bnia" model="res.bank">
+        <field name="name">Bank PT. Bank CIMB Niaga (Tbk.)</field>
+    </record>
+    <record id="res_bank_bdin" model="res.bank">
+        <field name="name">Bank PT. Bank Danamon Indonesia (Tbk.)</field>
+    </record>
+    <record id="res_bank_bjb" model="res.bank">
+        <field name="name">Bank BJB</field>
+    </record>
+    <record id="res_bank_yudb" model="res.bank">
+        <field name="name">Bank Neo Commerce (BNC)</field>
+    </record>
+    <record id="res_bank_bdki" model="res.bank">
+        <field name="name">Bank DKI</field>
+    </record>
+    <record id="res_bank_othr" model="res.bank">
+        <field name="name">Other Bank</field>
+    </record>
+</odoo>
