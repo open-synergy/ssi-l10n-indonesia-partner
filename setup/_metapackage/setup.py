@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for open-synergy-ssi-l10n-indonesia-partner Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-ssi_l10n_id_partner_bank',
         'odoo14-addon-ssi_l10n_id_partner_identification_bpjs',
         'odoo14-addon-ssi_l10n_id_partner_identification_kependudukan',
     ],

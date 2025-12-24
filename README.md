@@ -18,6 +18,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[ssi_l10n_id_partner_bank](ssi_l10n_id_partner_bank/) | 14.0.1.0.0 |  | Partner Identification - Bank
 [ssi_l10n_id_partner_identification_bpjs](ssi_l10n_id_partner_identification_bpjs/) | 14.0.1.0.1 |  | Partner Identification - BPJS
 [ssi_l10n_id_partner_identification_kependudukan](ssi_l10n_id_partner_identification_kependudukan/) | 14.0.1.0.1 |  | Partner Identification - Identitas Kependudukan
 
