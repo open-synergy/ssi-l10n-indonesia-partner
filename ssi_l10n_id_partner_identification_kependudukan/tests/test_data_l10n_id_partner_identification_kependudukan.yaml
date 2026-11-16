@@ -1,0 +1,99 @@
+scenarios:
+  - name: "Kependudukan Identification - Compute, inverse and search on res.partner"
+    steps:
+      - step: "Create partner for kependudukan test"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test Partner Kependudukan"
+
+      - step: "Set e-KTP number"
+        action: "write"
+        target: "partner"
+        values:
+          ektp_number: "3201234567890001"
+
+      - step: "Assert e-KTP number is set"
+        action: "assert"
+        target: "partner"
+        asserts:
+          ektp_number:
+            type: "value"
+            expected: "3201234567890001"
+
+      - step: "Set Kartu Keluarga number"
+        action: "write"
+        target: "partner"
+        values:
+          kartu_keluarga_number: "3201234567890000"
+
+      - step: "Assert Kartu Keluarga number is set"
+        action: "assert"
+        target: "partner"
+        asserts:
+          kartu_keluarga_number:
+            type: "value"
+            expected: "3201234567890000"
+
+      - step: "Set Passport number"
+        action: "write"
+        target: "partner"
+        values:
+          passport_number: "A1234567"
+
+      - step: "Assert Passport number is set"
+        action: "assert"
+        target: "partner"
+        asserts:
+          passport_number:
+            type: "value"
+            expected: "A1234567"
+
+      - step: "Search partner by e-KTP number"
+        action: "search"
+        model: "res.partner"
+        domain:
+          - ["ektp_number", "=", "3201234567890001"]
+        save_as: "partners_by_ektp"
+        expect_count: 1
+
+      - step: "Assert partner found by e-KTP"
+        action: "assert"
+        target: "partners_by_ektp"
+        asserts:
+          ektp_number:
+            type: "value"
+            expected: "3201234567890001"
+
+      - step: "Search partner by Kartu Keluarga number"
+        action: "search"
+        model: "res.partner"
+        domain:
+          - ["kartu_keluarga_number", "=", "3201234567890000"]
+        save_as: "partners_by_kk"
+        expect_count: 1
+
+      - step: "Assert partner found by Kartu Keluarga"
+        action: "assert"
+        target: "partners_by_kk"
+        asserts:
+          kartu_keluarga_number:
+            type: "value"
+            expected: "3201234567890000"
+
+      - step: "Search partner by Passport number"
+        action: "search"
+        model: "res.partner"
+        domain:
+          - ["passport_number", "=", "A1234567"]
+        save_as: "partners_by_passport"
+        expect_count: 1
+
+      - step: "Assert partner found by Passport"
+        action: "assert"
+        target: "partners_by_passport"
+        asserts:
+          passport_number:
+            type: "value"
+            expected: "A1234567"

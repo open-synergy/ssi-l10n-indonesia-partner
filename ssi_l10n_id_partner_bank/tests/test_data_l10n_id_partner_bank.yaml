@@ -1,0 +1,74 @@
+scenarios:
+  - name: "Partner Bank - Verify Indonesian banks data loaded"
+    steps:
+      - step: "Search BCA bank"
+        action: "search"
+        model: "res.bank"
+        domain:
+          - ["name", "=", "Bank Central Asia (BCA)"]
+        save_as: "bank_bca"
+        expect_count: 1
+
+      - step: "Assert BCA bank exists"
+        action: "assert"
+        target: "bank_bca"
+        asserts:
+          name:
+            type: "value"
+            expected: "Bank Central Asia (BCA)"
+
+      - step: "Search BRI bank"
+        action: "search"
+        model: "res.bank"
+        domain:
+          - ["name", "=", "Bank Rakyat Indonesia (BRI)"]
+        save_as: "bank_bri"
+        expect_count: 1
+
+      - step: "Assert BRI bank exists"
+        action: "assert"
+        target: "bank_bri"
+        asserts:
+          name:
+            type: "value"
+            expected: "Bank Rakyat Indonesia (BRI)"
+
+      - step: "Search Bank Mandiri"
+        action: "search"
+        model: "res.bank"
+        domain:
+          - ["name", "=", "Bank Mandiri"]
+        save_as: "bank_mandiri"
+        expect_count: 1
+
+      - step: "Assert Bank Mandiri exists"
+        action: "assert"
+        target: "bank_mandiri"
+        asserts:
+          name:
+            type: "value"
+            expected: "Bank Mandiri"
+
+      - step: "Create a partner with bank account"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test Partner Bank Indonesia"
+
+      - step: "Create partner bank account"
+        action: "create"
+        model: "res.partner.bank"
+        save_as: "partner_bank"
+        values:
+          partner_id: "EVAL: registry['partner'].id"
+          bank_id: "EVAL: registry['bank_bca'].id"
+          acc_number: "1234567890"
+
+      - step: "Assert partner bank account created"
+        action: "assert"
+        target: "partner_bank"
+        asserts:
+          acc_number:
+            type: "value"
+            expected: "1234567890"
